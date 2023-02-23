@@ -19,6 +19,8 @@ RUN pip install --no-cache-dir --no-index torch-scatter torch-sparse torch-clust
     pip install --no-cache-dir torch-geometric && \
     pip install --no-cache-dir typing-extensions --upgrade
 
+# RUN pip install --no-cache-dir 'jetnet==0.2.2'
+
 USER $NB_UID:$NB_GID
 RUN mkdir -p /tmp/nvvm && mkdir -p /tmp/nvvm/libdevice && cp /opt/conda/lib/libdevice.10.bc /tmp/nvvm/libdevice/
 ENV XLA_FLAGS="--xla_gpu_cuda_data_dir=/tmp"
